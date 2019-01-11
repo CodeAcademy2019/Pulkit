@@ -12,5 +12,7 @@ describe('stringToNumber',()=>{
     it('should remove trailing zeroes from input',()=>{
         expect(stringToNumber('0012')).toEqual(12)
     })
-
+    it('should return 0 for null',()=>{
+        expect(stringToNumber(null)).toEqual('Null Object');
+    })
 })
