@@ -1,0 +1,1 @@
+module.exports = (lowBound = 0,upperBound = 1) => (lowBound+upperBound)/2;
