@@ -1,1 +1,4 @@
-console.log("HELLO ES6")
+function Hi(){
+   return  'HELLO ES6';
+}
+module.exports = Hi;

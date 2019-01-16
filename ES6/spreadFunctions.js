@@ -1,1 +1,3 @@
-console.log(`The minimum of [${process.argv.slice(2)}] is ${Math.min(...process.argv.slice(2))}`);
+//console.log(`The minimum of [${process.argv.slice(2)}] is ${Math.min(...process.argv.slice(2))}`);
+
+module.exports = ()=>`The minimum of [${process.argv.slice(2)}] is ${Math.min(...process.argv.slice(2))}`;
