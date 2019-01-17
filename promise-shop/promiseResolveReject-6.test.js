@@ -1,4 +1,4 @@
-let promises = require('./promiseResolveReject-6.js');
+const promises = require('./promiseResolveReject-6.js');
 describe('tesing resolve and reject',()=>{
     it('testing if resolves returns right string : Resolved',()=>{
         return expect(promises.promiseResolve).resolves.toEqual('Resolved');
