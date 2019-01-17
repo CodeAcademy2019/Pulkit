@@ -1,15 +1,19 @@
-'use strict'
-var promise = new Promise(function (fulfill, reject) {
-   setTimeout(()=>{
-       reject(new Error('REJECTED!'));
-   },300);
-  });
 
-  function onReject (error) {
+const promiseValue = (fulfill, reject) =>{
+  setTimeout(()=>{
+      reject(new Error('REJECTED!'));
+  },300);
+ };
+
+const promise = new Promise(promiseValue);
+
+const doPromise = ()=>{
+  return promise;
+}
+function onReject (error) {
     console.log(error.message);
-  }
+}
 
-  //promise.then((value)=>{console.log(value)},(value)=>{
-    //onReject(value)});
+promise.then(null,onReject);
 
-    promise.then(null,onReject);
+module.exports = doPromise;

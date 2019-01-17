@@ -1,9 +1,8 @@
 
-'use strict';
 const timeOut =  function (fulfill, reject) {
-    setTimeout(()=>{fulfill('FULFILLED!')},300);
+    setTimeout(()=>{fulfill('FULFILLED!')},5000);
  };
-var promise = new Promise(timeOut);
+const promise = new Promise(timeOut);
 const didPromise = function doPromise(){
     return promise;
 }
