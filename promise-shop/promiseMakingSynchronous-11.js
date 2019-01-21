@@ -29,7 +29,6 @@ function all(firstPromise,secondPromise)
 }
 //all(getPromise1(),getPromise2()).then(console.log);
 
-
 //for testing purpose
 const getPromise1 = ()=>{
     return new Promise(function (resolve,reject){

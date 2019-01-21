@@ -1,13 +1,18 @@
 'use strict'
-const promise = new Promise(function (fulfill,reject){
-    fulfill('I FIRED');
-    reject(new Error('I DID NOT FIRE'));
-})
 
-module.exports = ()=>promise;
+const doPromise = ()=>{
+    const promise = new Promise(function (fulfill,reject){
+        fulfill('I FIRED');
+        reject(new Error('I DID NOT FIRE'));
+    })
+    return promise;
+}
 
 function onReject(error){
     console.log(error.message);
+    return error.message;
 }
 
-promise.then(console.log,onReject);
+module.exports = {doPromise,onReject};
+
+doPromise().then(console.log,onReject);

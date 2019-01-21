@@ -9,6 +9,8 @@ describe('testing for promise to resolve on correct JSON and reject on incorrect
     })
 
     it('testing if promise rejects with error on incorrect JSON input',()=>{
-        return expect(promise('{ "name":"John", "age":30, "car":abc}')).rejects.toEqual(new Error('Unexpected token a in JSON at position 33'));
+        return expect(promise('{ "name":"John", "age":30, "car":abc}')).rejects.toEqual(new Error('Unable to parse json'));
     })
 })
+
+//need modification pass proper error mssg

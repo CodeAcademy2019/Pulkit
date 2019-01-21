@@ -12,8 +12,9 @@ const doPromise = ()=>{
 }
 function onReject (error) {
     console.log(error.message);
+    return error.message;
 }
 
 promise.then(null,onReject);
 
-module.exports = doPromise;
+module.exports = {doPromise,onReject};

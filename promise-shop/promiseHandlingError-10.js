@@ -5,14 +5,33 @@ const iterate = (value)=>{
     console.log(value);
     return value+1;
 }
-let promise1 = Promise.resolve(iterate(1));
-let promise2 = promise1.then(iterate);
-let promise3 = promise2.then(iterate);
-let promise4 = promise3.then(iterate);
-let promise5 = promise4.then(iterate);
-let promise6 = promise5.then(alwaysThrows);
-let promise7 = promise6.then(iterate).then(iterate).then(iterate).then(iterate).then(iterate);
-promise7.then(null,(err)=>{
+let promise1 = ()=>{
+    return Promise.resolve(iterate(1));
+}
+promise1();
+let promise2 = ()=>{
+    return promise1().then(iterate);
+}
+promise2();
+let promise3 = ()=>{
+    return promise2().then(iterate);
+}
+promise3();
+let promise4 = ()=>{
+    return promise3().then(iterate);
+}
+promise4();
+let promise5 = ()=>{
+    return promise4().then(iterate);
+}
+promise5();
+const promise6 = ()=>{
+    return promise5().then(alwaysThrows);
+}
+const promise7 = ()=>{
+    return promise6().then(iterate).then(iterate).then(iterate).then(iterate).then(iterate);
+}
+promise7().then(null,(err)=>{
     console.log(err.message);
     });
 
