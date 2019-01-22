@@ -27,7 +27,6 @@ const strike = (strike_array,strike_index)=>{
 const openFrame = (open_array,open_index)=>{
 	if((open_array.length-open_index)<2)
 	{
-		console.log(open_array.length,open_index);
 		return new Error('less number of arguments');
 	}
 	const score = open_array[open_index]+open_array[open_index+1];
@@ -39,7 +38,6 @@ const openFrame = (open_array,open_index)=>{
 };
 
 const score = (pins_array)=>{
-	console.log(pins_array);
 	if(pins_array.length<20 || pins_array.length>21)
 	{
 		return new Error('Ambiguos frame set');
@@ -97,7 +95,7 @@ const rolls = (...arg)=>{
 };
 
 
-console.log(rolls(6,4,1,0,3,7,1,2,0,0,0,0,0,0,0,0,0,0,10,10,10));
+//console.log(rolls(6,4,1,0,3,7,1,2,0,0,0,0,0,0,0,0,0,0,10,10,10));
 
 
 module.exports = {rolls,spare,strike,openFrame,score};

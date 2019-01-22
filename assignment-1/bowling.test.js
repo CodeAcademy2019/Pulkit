@@ -70,7 +70,7 @@ describe('testing rolls function',()=>{
 		expect(bowlingFunctions.rolls(3,2,0,0,10,10,10,0,0,0,1,0,3,0,0,0,0,0,10,10,10)).toEqual(79);
 	});
 	it('should return error: less arguments',()=>{
-		expect(bowlingFunctions.rolls(3,2,0,0,10,10,10,0,0,0,1,0,3,0,0,0,0,0,10,0)).toEqual(new Error('less number of arguments'));
+		expect(bowlingFunctions.rolls(0,2,0,0,10,10,10,0,0,0,1,0,3,0,0,0,0,0,10,0)).toEqual(new Error('less number of arguments'));
 	});
 	it('should return array',()=>{
 		expect(bowlingFunctions.rolls(9,3,0,6)).toEqual(new Error('Ambiguos frame set'));
