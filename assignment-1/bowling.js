@@ -1,6 +1,6 @@
 const rolls = (...arg)=>{
-	console.log(arg);
-	console.log(strike(arg,0));
+	//console.log(arg);
+	//console.log(strike(arg,0));
 	return [...arg];
 };
 const spare = (spare_array,spare_index)=>{
@@ -27,10 +27,25 @@ const strike = (strike_array,strike_index)=>{
 	return 10+strike_array[strike_index+1]+strike_array[strike_index+2];
 };
 
+const openFrame = (open_array,open_index)=>{
+	if((open_array.length-open_index)<2)
+	{
+		//console.log(open_array);
+		console.log(open_array.length,open_index);
+		return new Error('less number of arguments');
+	}
+	let score = open_array[open_index]+open_array[open_index+1];
+	if(score>=10)
+	{
+		return new Error('Not an open frame');
+	}
+	return score;
+};
+console.log(openFrame([5,4,0,6],2));
 // const score = (pins_array)=>{
 
 // };
-rolls(8,2,6);
+//rolls(8,2,6);
 
 
-module.exports = {rolls,spare,strike};
+module.exports = {rolls,spare,strike,openFrame};

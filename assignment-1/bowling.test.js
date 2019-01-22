@@ -32,3 +32,18 @@ describe('testing strike function',()=>{
 		expect(bowlingFunctions.strike([1,2],0)).toEqual(new Error('less number of arguments'));
 	});
 });
+
+describe('testing openFrame function',()=>{
+	it('should return 6 ',()=>{
+		expect(bowlingFunctions.openFrame([5,4,0,6],2)).toEqual(6);
+	});
+	it('should return error: Not an open frame',()=>{
+		expect(bowlingFunctions.openFrame([1,9,3],0)).toEqual(new Error('Not an open frame'));
+	});
+	it('should return error: Not an open frame',()=>{
+		expect(bowlingFunctions.openFrame([5,5],0)).toEqual(new Error('Not an open frame'));
+	});
+	it('should return error: less number of arguements',()=>{
+		expect(bowlingFunctions.openFrame([1],0)).toEqual(new Error('less number of arguments'));
+	});
+});
