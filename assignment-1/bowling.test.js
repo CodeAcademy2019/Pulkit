@@ -47,3 +47,18 @@ describe('testing openFrame function',()=>{
 		expect(bowlingFunctions.openFrame([1],0)).toEqual(new Error('less number of arguments'));
 	});
 });
+
+describe('testing score function',()=>{
+	it('should return error: Ambiguous frame set(arguments are less then the described rules) ',()=>{
+		expect(bowlingFunctions.score([5,4,0,6],2)).toEqual(new Error('Ambiguos frame set'));
+	});
+	it('should return error: Ambiguous frame set',()=>{
+		expect(bowlingFunctions.score([])).toEqual(new Error('Ambiguos frame set'));
+	});
+	it('should return score 30',()=>{
+		expect(bowlingFunctions.score([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10])).toEqual(30);
+	});
+	it('should return score 45',()=>{
+		expect(bowlingFunctions.score([5,4,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10],0)).toEqual(45);
+	});
+});
