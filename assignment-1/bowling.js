@@ -1,3 +1,5 @@
+/*Assumptions: input will not contain any value more than 10 or sum in a frame more than 10
+*/ 
 const spare = (spare_array,spare_index)=>{
 	if((spare_array.length-spare_index)<3)
 	{

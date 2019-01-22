@@ -66,6 +66,12 @@ describe('testing rolls function',()=>{
 	it('should return score 45',()=>{
 		expect(bowlingFunctions.rolls(6,4,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).toEqual(16);
 	});
+	it('should return score 79',()=>{
+		expect(bowlingFunctions.rolls(3,2,0,0,10,10,10,0,0,0,1,0,3,0,0,0,0,0,10,10,10)).toEqual(79);
+	});
+	it('should return error: less arguments',()=>{
+		expect(bowlingFunctions.rolls(3,2,0,0,10,10,10,0,0,0,1,0,3,0,0,0,0,0,10,0)).toEqual(new Error('less number of arguments'));
+	});
 	it('should return array',()=>{
 		expect(bowlingFunctions.rolls(9,3,0,6)).toEqual(new Error('Ambiguos frame set'));
 	});
