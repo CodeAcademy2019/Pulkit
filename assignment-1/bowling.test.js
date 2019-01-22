@@ -1,12 +1,4 @@
 const bowlingFunctions = require('./bowling.js');
-describe('testing rolls function',()=>{
-	it('should return array',()=>{
-		expect(bowlingFunctions.rolls(9,3,0,6)).toEqual([9,3,0,6]);
-	});
-	it('should return empty array',()=>{
-		expect(bowlingFunctions.rolls()).toEqual([]);
-	});
-});
 describe('testing spare function',()=>{
 	it('should return 10 ',()=>{
 		expect(bowlingFunctions.spare([9,1,0,6],0)).toEqual(10);
@@ -18,6 +10,7 @@ describe('testing spare function',()=>{
 		expect(bowlingFunctions.spare([1,2],0)).toEqual(new Error('less number of arguments'));
 	});
 });
+
 describe('testing strike function',()=>{
 	it('should return 11 ',()=>{
 		expect(bowlingFunctions.strike([10,1,0,6],0)).toEqual(11);
@@ -60,5 +53,23 @@ describe('testing score function',()=>{
 	});
 	it('should return score 45',()=>{
 		expect(bowlingFunctions.score([5,4,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10],0)).toEqual(45);
+	});
+});
+
+describe('testing rolls function',()=>{
+	it('should return score 90',()=>{
+		expect(bowlingFunctions.rolls(3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6)).toEqual(90);
+	});
+	it('should return score 45',()=>{
+		expect(bowlingFunctions.rolls(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10)).toEqual(30);
+	});
+	it('should return score 45',()=>{
+		expect(bowlingFunctions.rolls(6,4,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).toEqual(16);
+	});
+	it('should return array',()=>{
+		expect(bowlingFunctions.rolls(9,3,0,6)).toEqual(new Error('Ambiguos frame set'));
+	});
+	it('should return empty array',()=>{
+		expect(bowlingFunctions.rolls()).toEqual(new Error('Ambiguos frame set'));
 	});
 });

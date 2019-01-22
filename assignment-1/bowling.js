@@ -35,9 +35,9 @@ const openFrame = (open_array,open_index)=>{
 	}
 	return score;
 };
-//console.log(openFrame([5,4,0,6],2));
 
 const score = (pins_array)=>{
+	console.log(pins_array);
 	if(pins_array.length<20 || pins_array.length>21)
 	{
 		return new Error('Ambiguos frame set');
@@ -52,7 +52,6 @@ const score = (pins_array)=>{
 		if(i%2==0)
 		{
 			tiltSum = pins_array[i];
-			//console.log('tilt',tiltSum);
 			if(pins_array[i]==10)
 			{
 				tmpScore = 	strike(pins_array,i);
@@ -63,12 +62,10 @@ const score = (pins_array)=>{
 				totScore+=tmpScore;
 				i+=2;
 			}else{
-				//console.log('inside');
 				i+=1;
 			}
 		}else{
 			tiltSum+=pins_array[i];
-			//console.log(tiltSum,'tilt');
 			if(tiltSum==10)
 			{
 				tmpScore = spare(pins_array,i-1);
@@ -94,13 +91,11 @@ const score = (pins_array)=>{
 };
 
 const rolls = (...arg)=>{
-	//console.log(arg);
 	return score(arg);
 };
 
 
-//console.log(score([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10,0]));
-//rolls(8,2,6);
+console.log(rolls(6,4,1,0,3,7,1,2,0,0,0,0,0,0,0,0,0,0,10,10,10));
 
 
 module.exports = {rolls,spare,strike,openFrame,score};
