@@ -6,7 +6,7 @@ const callback = (response)=>{
     })
 }
 const httpClient = ()=>{
-    http.get(process.argv[2],callback)
+    http.get(process.argv[2],callback);
 }
 httpClient();
 module.exports = httpClient;

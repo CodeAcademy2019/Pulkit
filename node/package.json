@@ -1,0 +1,20 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "addNumbers-2.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bl": "^2.1.2",
+    "gest": "^1.0.1",
+    "jest": "^23.6.0",
+    "net": "^1.0.2",
+    "strftime": "^0.10.0",
+    "through2-map": "^3.0.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
